@@ -1,0 +1,259 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Burger King Customer Survey</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="inline">
+          <h1 id="title">
+            Burgir survey
+          
+          <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/2024px-Burger_King_logo_%281999%29.svg.png">
+        </div>
+        
+        <p id="description">We thank you for your feedback, it helps us to improve in our services. Thank you.</p>
+
+      </header>
+      <form id="survey-form">
+        <section>
+        
+        <div class="smiley-metric">
+          <p>How nice you thought the customer service was?</p>
+          <img class="smiley-image" src="https://t3.ftcdn.net/jpg/02/54/67/32/360_F_254673217_ThXYoQBqYlNVQk1IUfGb7kWKhgbC1cWK.jpg" alt="photo of a metric">
+          <input type="range" min="1", max="5" class="slider">
+        </div>
+        <div class="smiley-metric">
+          <p>How satisfied you were of the speed how fast you got served after ordering?</p>
+          <img class="smiley-image" src="https://t3.ftcdn.net/jpg/02/54/67/32/360_F_254673217_ThXYoQBqYlNVQk1IUfGb7kWKhgbC1cWK.jpg" alt="photo of a metric">
+          <input type="range" min="1", max="5" class="slider">
+        </div>
+        <div class="smiley-metric">
+          <p>How did you perceive the dining room to be in comfortability aspect?</p>
+          <img class="smiley-image" src="https://t3.ftcdn.net/jpg/02/54/67/32/360_F_254673217_ThXYoQBqYlNVQk1IUfGb7kWKhgbC1cWK.jpg" alt="photo of a metric">
+          <input type="range" min="1", max="5" class="slider">
+        </div>
+        <div class="smiley-metric">
+          <p>What was your overall gist of feeling when leaving our establishment.</p>
+          <img class="smiley-image" src="https://t3.ftcdn.net/jpg/02/54/67/32/360_F_254673217_ThXYoQBqYlNVQk1IUfGb7kWKhgbC1cWK.jpg" alt="photo of a metric">
+          <input type="range" min="1", max="5" class="slider">
+        </div>
+        <hr>
+        <p>Where did you hear about us?</p>
+        <div class="ad-options">
+          <label>
+            <input type="radio" value="youtube" name="hear-about-us">
+            Youtube ad
+          </label>
+          <label>
+            <input type="radio" value="friend-relative" name="hear-about-us">
+            From friend/relative
+          </label>
+          <label>
+            <input type="radio" value="tv-ad" name="hear-about-us">
+            Tv ad
+          </label>
+          <label>
+            <input type="radio" value="street-ad" name="hear-about-us">
+            Street ad
+          </label>
+          <label>
+            <input type="radio" value="magazine-ad" name="hear-about-us">
+            Magazine ad
+          </label>
+        </div>
+
+        <div class="form-group">
+          <label id="gender-label" for="gender">Gender</label>
+            <select id="dropdown">
+              <option>(select one)</option>
+              <option>male</option>
+              <option>female</option>
+              <option>Non-binary / other</option>
+            </select>
+        </div>
+        <hr>
+        <p class="last"> If you have anything specific you want to tell us or want to suggest something that would potentially improve our services, you can write your request in here.
+        <textarea></textarea>
+        
+        <hr>
+
+
+        </section>
+        <section>
+          <label>Would you like to take a part in our raffle?</label>
+          <div class="raffle-section">
+            <label>Take a part in here -><input id="yes" type="checkbox" name="yes-no" onchange="handleChange(this)" value="no"></label>
+            <label>
+            <div class="raffle">
+              <div class="form-group">
+                <label id="name-label" for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name" required="">
+              </div>
+              <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required="">
+              </div>
+              <div class="form-group">
+                <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
+                <input type="number" name="age" id="number" min="16" max="99" class="form-control" placeholder="Must be over 16">
+              </div>
+              <hr>
+              <div class="form-group">
+                <label><input type="checkbox" name="agree" id="agree" value="agree">  I agree to the <a href="https://www.youtube.com/watch?v=kmFQAZc2nJI">terms and conditions</a>
+                <label>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="form-group">
+          <input id="submit" type="submit" value="Submit">
+        </div>
+      </form>
+    <footer>
+      <p>
+      aug. 2023. One thing is for sure, that this survey sucks as fuck! I should recolor the whole get a go and use more white to make it more modern etc. fuck this is a template anyway.
+      </p>
+    </footer>
+  </body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body{
+  background-image: url("https://imageproxy.wolt.com/venue/5fbc3186bed9de155a5fae08/d37996de-2dd7-11eb-b962-22fb2f8a4344_0cb71ffc_226b_11eb_b329_7229b6d9ba8e_e4cdab6357cae3872656aa23c825bc28.jpeg");
+  color: brown;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container{
+  height: 100%
+}
+header{
+background-color:#e3d18faa;
+  width: 60%;
+  margin: 0 auto;
+  padding: 0 2em;
+  border: 10px inset coral;
+  text-align: center;
+  border-radius: 2em;
+  max-width: 500px;
+}
+#description{
+  font-size: 1em;
+}
+.inline{
+  margin: auto;
+  text-align: center;
+}
+h1{
+  font-family: cursive;
+  border: 5px dotted coral;
+  padding: 0 0.7em;
+  text-decoration: underline;
+  background-color: #ffdf94aa;
+}
+.logo{
+  width: 13%;
+  vertical-align: sub;
+}
+form{
+  margin: 0 auto;
+  margin-top: 2em;
+  background: linear-gradient( #ffdf9fff, #ffdf94bb);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 1em;
+  border: 10px solid brown;
+}
+.raffle.hidden {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+}
+.raffle {
+  display: none
+}
+
+.form-group{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.form-group label{
+  text-align: left;
+}
+.raffle-section{
+  margin: 0 auto;
+  width: 95%;
+  border: 3px dashed brown;
+  background-color:#D8B377cc;
+}
+a{
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+hr{
+  color: brown 
+}
+input[type="submit"]{
+  width: 80%;
+  background-color: burlywood;
+  border-color: brown;
+  height: 2.5em;
+  font-weight: bold;
+  border-radius: 2em;
+  margin: 1.5em auto;
+  background-image: linear-gradient(0, burlywood 1%, brown);
+  background-size: 0 0;
+  transition: .4s;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+input[type="submit"]:hover{
+    background-size: 100% 100%;
+    color: #fff;
+}
+.smiley-image{
+  background: white;
+  mix-blend-mode:    multiply;
+  text-align:center;
+  width: 80%;
+  display:block;
+  margin:auto;
+  margin-bottom: -10px
+}
+.slider{
+  width: 68%;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+smiley-metric, p{
+  text-align: center;
+  margin: auto;
+}
+textarea{
+  width: 80%;
+  margin-left: 20px;
+}
+hr{
+  margin: 20px auto;
+}
+label{
+  display: block;
+}
+
+** end of undefined **
+

@@ -1,0 +1,23 @@
+function sumFibs(num) {
+  let previous = 0;
+  let current  = 1;
+  let temp     = undefined;
+  let isLowerThanNum = true;
+  let oddFibonacciSum = 0;
+  while(isLowerThanNum){
+    if(num < current){
+      isLowerThanNum = false;
+      break;
+    }else{
+      if(current % 2 != 0){
+        oddFibonacciSum += current;
+      }
+      temp = current;
+      current = previous + current;
+      previous = temp;
+    }
+  }
+  return oddFibonacciSum;
+}
+
+console.log(sumFibs(75024));

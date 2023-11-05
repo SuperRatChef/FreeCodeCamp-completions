@@ -1,0 +1,22 @@
+function diffArray(arr1, arr2) {
+  let newArr = [];
+  arr1 = arr1.slice();
+  arr2 = arr2.slice();
+  
+  for(let i = arr1.length-1; i >= 0; i--){
+    let is_in_both = false;
+    for(let j = arr2.length-1; j >= 0; j--){
+      if(arr1[i] == arr2[j]){
+        is_in_both = true;
+        delete arr1[i];
+        delete arr2[j];
+      }
+    }
+  }
+  newArr = arr1.concat(arr2).filter(item => item != "")
+
+  return newArr;
+}
+
+let result = diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+console.log(result)

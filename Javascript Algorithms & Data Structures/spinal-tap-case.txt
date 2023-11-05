@@ -1,0 +1,10 @@
+function spinalCase(str) {
+  str = str.split(/(?=[A-Z])|\s|_|-/);
+  str = str.map(word => word.toLowerCase());
+  str = str.join("-");
+  return str;
+}
+
+spinalCase("thisIsSpinalTap")
+let result = spinalCase('This Is Spinal Tap');
+console.log(result)

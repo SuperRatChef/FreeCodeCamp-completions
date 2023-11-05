@@ -1,0 +1,16 @@
+function translatePigLatin(str) {
+  let vowels = ['a','e','i','u','o'];
+  let result = ""
+  if(vowels.indexOf(str[0]) === -1){
+    let consonantClusterSize = str.match(/^[^aeiuo]+/gi)[0].length;
+    //console.log("cluster",consonantClusterSize)
+    result = str.slice(consonantClusterSize,)+str.slice(0,consonantClusterSize)+"ay";
+  }else{
+    result = str.slice()+"way";
+  }
+  console.log(result);
+  return result;
+}
+
+translatePigLatin("consonant");
+translatePigLatin("glove")

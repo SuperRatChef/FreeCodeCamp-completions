@@ -1,0 +1,18 @@
+function fearNotLetter(str) {
+  let range = "abcdefghijklmnopqrstuvwxyz";
+  let start = range.indexOf(str[0]);
+  let end   = range.indexOf(str[str.length-1])
+
+  let missing_letter = undefined;
+  for(let i = start; i <= end; i++){
+    //console.log(range[i])
+    if(str.indexOf(range[i]) == -1){
+      missing_letter = range[i];
+      break;
+    }
+  }
+  //console.log(missing_letter)
+  return missing_letter;
+}
+
+fearNotLetter("abce");

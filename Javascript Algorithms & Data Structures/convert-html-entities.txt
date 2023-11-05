@@ -1,0 +1,16 @@
+function convertHTML(str) {
+  const htmlObjects = {
+    "&": "&amp;",
+    ">": "&gt;",
+    "<": "&lt;",
+    "'": "&apos;",
+    '"': "&quot;"
+  };
+
+  return str
+    .split("")
+    .map(object => htmlObjects[object] || object)
+    .join("");
+}
+
+console.log(convertHTML("Dolce & Gabbana"))

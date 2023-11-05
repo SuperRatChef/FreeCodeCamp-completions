@@ -1,0 +1,13 @@
+function myReplace(str, before, after) {
+  let isUpperCase = before[0] !== before[0].toLowerCase();
+  if(isUpperCase){
+    after = after[0].toUpperCase()+after.slice(1,).toLowerCase();
+  }else{
+    after = after.toLowerCase();
+  }
+  str = str.replace(before, after);
+  console.log(str);
+  return str;
+}
+
+myReplace("A quick brown fox Jumped over the lazy dog", "Jumped", "leaped");

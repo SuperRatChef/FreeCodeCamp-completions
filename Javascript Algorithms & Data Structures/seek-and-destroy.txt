@@ -1,0 +1,17 @@
+function destroyer(arr) {
+  let result = []
+  for(let i = 0; i < arr.length; i++){
+    let isMatch = false;
+    for(let j = 1; j < arguments.length; j++){
+      if(arr[i] == arguments[j]){
+        isMatch = true;
+      }
+    }
+    if(!isMatch){
+      result.push(arr[i])
+    }
+  }
+  return result;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

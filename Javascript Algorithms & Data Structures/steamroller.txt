@@ -1,0 +1,15 @@
+function steamrollArray(arr) {
+  //ok on this one i had no idea how to do this effectively
+  const flattened = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattened.push(...steamrollArray(arr[i]));
+    } else {
+      flattened.push(arr[i]);
+    }
+  }
+  return flattened;
+};
+
+
+steamrollArray([1, [2], [3, [[4]]]]);

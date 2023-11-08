@@ -1,0 +1,24 @@
+function smallestCommons(arr) {
+  let smaller = arr[0] < arr[1] ? arr[0] : arr[1]
+  let bigger = arr[0] > arr[1] ? arr[0] : arr[1]
+  let max = 1
+  for(let i = smaller; i <= bigger; i++){
+    max *= i;
+  }
+  let smallestCommon = 0;
+  for(let i = smaller; i <= max; i += smaller){
+    let isEvenlyDivisible = true
+    for(let x = smaller; x <= bigger; x++){
+      if(i % x != 0){
+        isEvenlyDivisible = false;
+      }
+    }
+    if(isEvenlyDivisible){
+      console.log(i)
+      return i;
+    }
+  }
+
+}
+
+smallestCommons([1,3]);

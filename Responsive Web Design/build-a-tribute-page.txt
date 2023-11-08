@@ -1,0 +1,106 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Some query</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+        <main id="main">
+            <header>
+                <h1 id="title">The great IBM 608</h1>
+                <p>More than just a calculator</p>
+                <figure id="img-div">
+                    <img id="image" src="http://www.columbia.edu/cu/computinghistory/608.jpg">
+                    <figcaption id="img-caption">Photo: IBM 608 Calculator Manual of Operation, Form 22-6666-1 (1957)</figcaption>
+                </figure>
+            </header>
+            <section>
+                <p id="tribute-info">The IBM 608 Transistor Calculator, a plugboard-programmable unit, was the first IBM product to use transistor circuits without any vacuum tubes and is believed to be the world's first all-transistorized calculator to be manufactured for the commercial market.[1][2]: 34  Announced in April 1955,[3][4] it was released in December 1957. The 608 was withdrawn from marketing in April 1959.[3]</p>
+                <p id="tribute-info">The chief designer of the circuits used in the IBM 608 was Robert A. Henle, who later oversaw the development of emitter-coupled logic (ECL) class of circuits.[2]: 59  The development of the 608 was preceded by the prototyping of an experimental all-transistor version of the 604. Although this was built and demonstrated in October 1954, it was not commercialized.[2]: 5</p>
+                <p id="tribute-info">To spur the adoption of transistor technology, shortly before the first IBM 608 shipped, Tom Watson directed that a date be set after which no new vacuum-tube-based products would be released.[5] This decision constrained IBM product managers, who otherwise had the latitude to select components for their products, to make the move to transistors. As a result, the successor to the IBM 650 used transistors, and it became the IBM 7070—the company's first transistorized stored-program computer.[2]: 50 </p>
+                <p id="tribute-info">It was similar in nature of operation to the vacuum-tube IBM 604, which had been introduced a decade earlier.[2]: 34  Although the 608 outpaced its immediate predecessor, the IBM 607 by a factor of 2.5,[3] it was soon rendered obsolete by newer IBM products and only a few dozen were ever delivered.[2]: 48 [6]</p>
+                <p id="tribute-info">The 608 contained more than 3,000 germanium transistors.[2]: 50  The use of transistors was a significant departure from the previous IBM calculators of this line. The 608's transistors made possible a 50 percent reduction in physical size and a 90 percent reduction in power requirements over comparable vacuum tube models.[7]</p>
+                <p id="tribute-info">The 608 also used magnetic core memory, but was still programmed using a control panel.[8] The main memory of the 608 could store 40 nine-digit numbers, and it had an 18-digit accumulator.[8] In raw speed terms, it could perform 4,500 additions per second, it could multiply two nine-digit numbers, yielding an 18-digit result in 11 milliseconds, and it could divide an 18-digit number by a nine-digit number to produce the nine-digit quotient in 13 milliseconds.[3] The 608 could handle 80 program steps.</p>
+                <p id="tribute-info">Developed in the mid-1950s as part of IBM's Modular Accounting Calculator (MAC) program, the IBM 608 is a transistorized version of the 604 that "combines the newest advances in electronics to perform the mathematical operations of addition, subtraction, multiplication, and division</p>
+                <p id="tribute-info">This machine is a cool slappy piece of history let me tell ya</p>
+                <p id="tribute-info">Ok this tribute page ain't that much of a high end shush. IN the first place the main element should not contain footer or headers, but the assingment forced me to do it that way.</p>
+            </section>
+            <footer>
+                <p>Read more about IBM 608 on <a id="tribute-link" href="https://en.wikipedia.org/wiki/IBM_608" target="_blank">Wikipedia</a></p>
+            </footer>
+        </main>
+        
+    </body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body{
+    background: url(https://i.pinimg.com/originals/ba/b4/11/bab411f03f0b16e9ef1b54f46de949de.jpg);
+    object-fit: fill;
+}   
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem
+}
+header{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    background-color: #671dcfaa;
+    padding: 30px;
+    border: 20px solid #37128cff;
+    border-radius: 10%;
+    color: white;
+}
+section{
+    width: 70%;
+    margin: auto;
+    background-color: #671dcfaa;
+    padding: 5%;
+    color: white;
+    border: 20px solid #37128cff;
+    border-top: none;
+    margin-top: -2px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    margin-bottom: 0;
+}
+section p {
+    margin-bottom: 40px;
+}
+section p:before {
+    content: "";
+    display: block;
+    background: url('https://art.pixilart.com/6e9c13b725562f5.png') no-repeat;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+footer{
+    padding: 20px;
+    color: white;
+    margin: auto;
+    margin-top: 0;
+    background-color: #671dcfaa;
+    border: 20px solid #37128cff;
+    border-top: none;
+    margin-top: -2px;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    width: 50%;
+    text-align: center;
+}
+a{
+    color: red;
+}
+
+** end of undefined **
+

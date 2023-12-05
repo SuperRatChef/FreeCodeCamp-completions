@@ -1,0 +1,20 @@
+function rot13(str) {
+  let startRange = "A".charCodeAt(0);
+  let endRange = "Z".charCodeAt(0);
+  let result = ""
+
+  for(let letter of str){
+    if(letter == "." || letter == " " || letter == "-" || letter == "?" || letter == "!"){
+      result += letter
+    }else{
+      //((letter.charCodeAt(0)+13+startRange)%endRange)-startRange
+      console.log(((letter.charCodeAt(0)+13+startRange)%endRange))
+      result += String.fromCharCode((letter.charCodeAt(0)+13-startRange)%(endRange-startRange+1)+startRange);
+    }
+  }
+  console.log(result)
+  return result
+}
+
+rot13("SERR PBQR PNZC");
+rot13("SERR CVMMN!")

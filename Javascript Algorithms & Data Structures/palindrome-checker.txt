@@ -1,0 +1,22 @@
+function palindrome(str) {
+  let reversed = 
+    str.split("")
+    .reverse()
+    .filter(letter => letter.match(/[A-Za-z0-9]/))
+    .join("")
+    .toLowerCase()
+    
+  let word = 
+    str.split("")
+    .filter(letter => letter.match(/[A-Za-z0-9]/))
+    .join("")
+    .toLowerCase()
+  
+  console.log(reversed);
+  console.log(word);
+  
+  return word == reversed;
+}
+
+palindrome("_---??eyeee");
+palindrome("1 eye for of 1 eye.")

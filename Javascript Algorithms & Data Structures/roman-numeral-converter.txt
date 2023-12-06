@@ -1,0 +1,47 @@
+let numerals = {
+    1000:   "M",
+    900:    "CM",
+    500:    "D",
+    400:    "CD",
+    100:    "C",
+    90:     "XC",
+    50:     "L",
+    40:     "XL",
+    10:     "X",
+    9:      "IX",
+    5:      "V",
+    4:      "IV",
+    1:      "I"
+}
+
+function convertToRoman(num) {
+
+    let pow_count = 0; 
+    let inRomans = ""
+
+    while(pow_count < num.toString().length){
+        let digit = parseInt(num.toString()[num.toString().length-pow_count-1])
+        let digitInTens = digit*Math.pow(10, pow_count);
+        pow_count++
+        //console.log(digitInTens)
+
+        if(digit <= 3 && digit > 0){
+            console.log(digit)
+            console.log(digitInTens)
+            inRomans = numerals[digitInTens/digit].repeat(digit) + inRomans
+        }else if(digit == 4 || digit == 5 || digit == 9){
+            inRomans = numerals[digitInTens] + inRomans
+        }else if(digit > 5){
+            console.log(digit)
+            console.log(digitInTens)
+            let fivesInTens = 5*Math.pow(10, pow_count-1);
+            console.log(fivesInTens)
+            inRomans = numerals[fivesInTens] + numerals[(digitInTens-fivesInTens)/(digit-5)].repeat(digit-5)+ inRomans
+        }
+    }
+    return inRomans;
+    
+}
+  
+let result = convertToRoman(83);
+console.log(result)

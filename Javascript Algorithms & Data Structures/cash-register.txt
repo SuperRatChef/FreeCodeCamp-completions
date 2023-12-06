@@ -1,0 +1,65 @@
+let cashConversionSizes = {
+    "PENNY":        0.01 , 
+    "NICKEL":       0.05 ,
+    "DIME":         0.1 ,
+    "QUARTER":      0.25 ,
+    "ONE":          1 ,
+    "FIVE":         5 ,
+    "TEN":          10 ,
+    "TWENTY":       20 ,
+    "ONE HUNDRED":  100 
+}
+
+function checkCashRegister(price, cash, cid/*cash-in-drawer*/){
+    //check all the values from highest amount of cash size, fit all that can fit in to the return, and go from there to the smallest of possible size;
+    let targetChange = parseFloat(cash - price).toFixed(2);
+    let openChange = targetChange;
+    let changes = []
+    console.log(cid)
+    let total_cid = Math.round(cid.map(item => item[1]).reduce((a, b) => a + b) * 100) / 100;
+    console.log(total_cid)
+    console.log("printing this")
+
+    for(let i = cid.length-1; i >= 0; i--){
+        //ok so you want to remove from openchange the amount of change divided by the cashConversionUnit meaning takenChange to paying is openchange % cashConversionSizes  for give unit 
+        //ok my head is empty
+        //this is a fucking basic math problem and you are fucking freezing already? fucking get a life. start and become a fucking mcdonals employee
+        let unitSize = cid[i][0]
+        console.log(unitSize+"("+cashConversionSizes[unitSize]+")")
+        console.log(Math.floor(openChange / cashConversionSizes[unitSize]));
+        let takeable = Math.round(Math.floor(openChange / cashConversionSizes[unitSize])*cashConversionSizes[unitSize]*100)/100
+        takeable = takeable <= cid[i][1] ? takeable : cid[i][1];
+        console.log("takeable: "+ takeable)
+        console.log("from amount: "+ cid[i][1])
+        openChange = Math.round((openChange - takeable)*100)/100;
+        console.log("change open: " +openChange)
+
+        if(takeable != 0){
+            changes.push([unitSize, takeable])
+        }
+        if(openChange == 0){
+            break;
+        }
+        
+    }
+    if(openChange == 0){
+        if(targetChange == total_cid){
+          return {"status": "CLOSED", "change": cid}
+        }else{
+            return {"status": "OPEN", "change": changes}
+        }
+    }else{
+        return {"status": "INSUFFICIENT_FUNDS", change: []}
+    }
+    
+
+}
+
+let result = checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);
+console.log(result);
+result["change"].map(item => console.log(item))
+
+
+result = checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]])
+console.log(result);
+result["change"].map(item => console.log(item))

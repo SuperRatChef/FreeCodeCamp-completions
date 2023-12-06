@@ -21,9 +21,8 @@ function checkCashRegister(price, cash, cid/*cash-in-drawer*/){
     console.log("printing this")
 
     for(let i = cid.length-1; i >= 0; i--){
-        //ok so you want to remove from openchange the amount of change divided by the cashConversionUnit meaning takenChange to paying is openchange % cashConversionSizes  for give unit 
-        //ok my head is empty
-        //this is a fucking basic math problem and you are fucking freezing already? fucking get a life. start and become a fucking mcdonals employee
+        //this is a fucking basic math problem and you are fucking freezing already? fucking get a life. become a fucking mcdonalds employee(ok honestly wouldnt be so bad, especially if you can hazz as many burgir as you want)
+	//wait... it was the fucking javascripts way to be able to handle basic fuckcing math... again... i hate this language
         let unitSize = cid[i][0]
         console.log(unitSize+"("+cashConversionSizes[unitSize]+")")
         console.log(Math.floor(openChange / cashConversionSizes[unitSize]));

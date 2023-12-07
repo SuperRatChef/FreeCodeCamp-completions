@@ -1,0 +1,307 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>Linux Commands</header>
+      <ul>
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Define_CD_Base_dir">Define CD Base dir</a></li>
+        <li><a class="nav-link" href="#Up_multiple_dirs">Up multiple dirs</a></li>
+        <li><a class="nav-link" href="#Toggle_Between_dirs">Toggle Between dirs</a></li>
+        <li><a class="nav-link" href="#Manipulate_Directory_Stack">Manipulate Directory Stack</a></li>
+        <li><a class="nav-link" href="#Grep_Regex">Grep Regex</a></li>
+        <li><a class="nav-link" href="#Find_Command">Find Command</a></li>
+        <li><a class="nav-link" href="#Suppress_Standard_Output">Suppress Standard Output</a></li>
+        <li><a class="nav-link" href="#Reference">Reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+            <p>
+                Here I have listed just some hacks from book linux 101
+                as memos/refreshener for me to take advantage of. I srsly
+                did not have any better ideas as to what I should put inside 
+                this project so that should do.
+            </p>
+            <p>
+                Not saying that it is for nothing. I barely remember half the shit.
+            </p>
+            <code>Hopefully I find this enjoyable</code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Define_CD_Base_dir">
+        <header>Define CD Base dir</header>
+        <article>
+            <p>
+              If you are frequently performing cd to subdirectories, you can 
+              set the CDPATH to the parent directory and cd to the subdirectories 
+              without giving the parent directory path
+            </p>
+            <code>
+              <span># cd slush </span>
+              <span>-bash: cd: slush: No such file or directory </span>
+              <span># export CDPATH=/etc</span>
+              <span># cd slush </span>
+              <span>/etc/slush</span>
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Up_multiple_dirs">
+        <header>Up multiple dirs</header>
+        <article>
+            <p>
+              You can navigate up a very long file structure with this shit.
+              Sometimes useful if you want to escape vulnerable web servers file structure.
+            </p>
+            <code>
+              <span># cd ../../../../../</span>
+              <span>//goes to root directory if you were like on /var/www/html/functions/usersession</span>
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Toggle_Between_dirs">
+        <header>Toggle Between dirs</header>
+        <article>
+            <p>
+              You can toggle between the last two current directories using this
+            </p>
+            <code>
+              <span># cd -</span>
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Manipulate_Directory_Stack">
+        <header>Manipulate Directory Stack</header>
+        <article>
+            <p>
+              With directory stacks you can manipulate what directories you can be on at times. Useful on scripts.
+            </p>
+            <code>
+              <span># dirs //Display the directory stack</span>
+              <span># pushd . //Push current directory into the stack, You can specify alternate path too.</span>
+              <span># popd  //Pop directory from the stack and cd to it</span>
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Grep_Regex">
+        <header>Grep Regex</header>
+        <article>
+            <p>
+              You can use perl style regex on grep. Here is just a smal fraction of it cuz i dont wanna write too much.
+            </p>
+            <code>
+              <span># grep "^Nov 10" messages.loh //match start of the every line on file messages</span>
+              <span># grep "terminating.$" messages.log //match end of the every line on file messages</span>
+              <span># grep -c "^$" messages messages.log //counts specified pattern, this case empty lines</span>
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Find_Command">
+        <header>Find Command</header>
+        <article>
+            <p>
+              Here are some basic find command templates.
+            </p>
+            <code>
+              <span># find /etc -name "*mail*" //find filenames that has "mail" in its name</span>
+              <span># find /usr -type f -size +100M //find files greater than 100megabytes inside /usr dir</span>
+              <span># find . -mtime +60 //find files modified more than 60 days ago.</span>
+              <span># find . –mtime -1 //find files modified in the last days time</span>
+              <span># find / -type f -name *.tar.gz -size +100M -exec ls -l {}\; //you can execute commands on each match<span>
+
+            </code>
+        </article>
+      </section>
+
+      <section class="main-section" id="Suppress_Standard_Output">
+        <header>Suppress Standard Output</header>
+        <article>
+            <p>This</p><p>Is</p><p>Just</p>
+            <p>some</p><p>fill</p><p>fucking fcc</p>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <code>
+              <span># find /etc -name "*mail*" //find filenames that has "mail" in its name</span>
+              <span># find /usr -type f -size +100M //find files greater than 100megabytes inside /usr dir</span>
+              <span># find . -mtime +60 //find files modified more than 60 days ago.</span>
+              <span># find . –mtime -1 //find files modified in the last days time</span>
+              <span># find / -type f -name *.tar.gz -size +100M -exec ls -l {}\; //you can execute commands on each match<span>
+
+            </code>
+        </article>
+      </section>
+
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <article>
+          <ul>
+            <li>
+              Any more than this and i could get into problems with that book. Also i already have notes on this.
+              <a
+                href="https://www.youtube.com/watch?v=D2_r4q2imnQ"
+              >
+              Bruh
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+:root {
+    --base-text: grey;
+    --white: #ffffff;
+    --background-color: #3fccd1;
+    --main-doc-bg: #bdfdff;
+    --link-color: purple;
+}
+
+html,
+body {
+  min-width: 290px;
+  color: var(--base-text);
+  background-color: var(--background-color);
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+#navbar {
+  position: fixed;
+  min-width: 290px;
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  border-right: solid 5px;
+  border-color: #4f8082;
+  z-index: 1;
+  background: linear-gradient(90deg, #82e5e8, #4f8082);
+  border-bottom: 1rem solid;
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#main-doc header {
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+/*nav bar documents */
+#navbar ul {
+    height: 92%;
+    padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #82e5e8;
+    margin: auto;
+}
+
+#navbar li {
+    color: #4d4e53;
+    border-top: 1px solid;
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 8%;
+    margin: auto;
+}
+
+#navbar li:hover{
+    animation-name: nav-bar-animation;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+#navbar a {
+    display: block;
+    padding: 20px 30px;
+    color: var(--link-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#main-doc {
+    background-color: var(--main-doc-bg);
+    position: relative;
+    margin-left: 305px;
+    margin-top: 0;
+    padding: 20px;
+}
+
+section article {
+    margin: 15px;
+    font-size: 0.96em;
+}
+
+section li {
+    margin: 15px 0px 0px 20px;
+}
+
+code {
+    display: block;
+    text-align: left;
+    position: relative;
+    line-height: 2;
+    background-color: black;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 5px;
+    color: greenyellow;
+}
+code > span{
+    display: block
+}
+
+
+@keyframes nav-bar-animation {
+    from {
+        background-color: #82e5e8;
+        height: 8%;
+    }
+    to {
+        background-color: #599294;
+        height: 9%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+  /*no idea what this is about*/
+}
+
+** end of undefined **
+

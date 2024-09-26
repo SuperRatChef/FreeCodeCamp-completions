@@ -1,0 +1,260 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header id="header">
+        <nav id="nav-bar">
+            <ul>
+              <img src="https://static-00.iconduck.com/assets.00/satisfyer-icon-2048x1474-b4ce8uyf.png" alt="Logo" id="header-img">
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Product section with embedded video -->
+    <section id="product">
+        <h1>Welcome to Our Product Landing Page</h1>
+        <p>White as a cum... Discover the amazing features of our product.</p>
+            <iframe id="video" src="https://www.youtube.com/embed/EBCQykteYCA?si=qnKszTgDMhAuxegm" title="Product Video" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div id="picture">
+          <img src="https://m.media-amazon.com/images/I/51h61aoeoIL._AC_UF1000,1000_QL80_.jpg" width="100px">
+          <p>Discover this amazing shitty product that just somehow works I don't know... This is just some practice on how to write some products and shit. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </section>
+
+    <!-- Features section -->
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature-box">
+            <div class="feature">3 different motors go brrr</div>
+            <div class="feature">It has different suction modes, it can even have an orgasm on the rhytm of the russias national anthem</div>
+            <div class="feature">It is... idk its cheap!</div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a company dedicated to delivering shitty products. Srsly i have no idea how you should build an appealing site and stuff, but i hope this suffices as an proper project for freecodecamp.</p>
+    </section>
+
+    <!-- Contact Form section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="submit" id="submit" value="Subscribe">
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Yales idiotic shit</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+*{
+  border: 1px solid red;
+}
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url("https://media.istockphoto.com/id/1034790898/vector/vector-seamless-pattern-with-rose-flowers-pink-outline-on-the-white-background-hand-drawn.jpg?s=612x612&w=0&k=20&c=03VgBRbhvPQuC-Q0iI0mWGAzy4itaN8vTGHrX_d6Hcc=")
+}
+
+/* Header Styles */
+#header {
+    background: url("https://img.freepik.com/free-vector/hand-drawn-floral-outline-background_52683-128389.jpg");
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#nav-bar{
+  border: 2px solid green;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header-img {
+    height: 50px;
+    width: 50px
+}
+
+#nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#nav-bar ul li {
+    display: inline;
+    border-bottom: 2px solid green;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Section Styling */
+section {
+    padding: 60px 20px;
+    margin: 20px;
+    margin-top: 80px;
+    border:10px solid#734068;
+    border-radius: 20px;
+}
+
+#product h1 {
+    text-align: center;
+}
+#product{
+  border: 10px solid#d1d1d1;
+  background-color: #ffffffaa;
+}
+iframe{
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+}
+#video-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#picture{
+    display: flex;
+    align-items: center; /* Aligns image and text vertically */
+    justify-content: space-between; /* Ensures space between text and image */
+    padding: 20px;
+}
+
+/* Feature Section */
+#features {
+    background: linear-gradient(#edb9e2, #f78bbd);
+}
+#features h2{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  border-bottom: #734068;
+}
+
+.feature-box {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.feature {
+    background-color: #eee;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+
+/* About Section */
+#about {
+    background: linear-gradient(#edb9e2, #f78bbd);
+}
+#about h2{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px
+}
+
+/* Contact Form */
+#contact {
+    background: linear-gradient(#edb9e2, #f78bbd);
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="email"], input[type="submit"] {
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #nav-bar ul {
+        flex-direction: column;
+        align: center;
+    }
+
+    .feature-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+** end of undefined **
+

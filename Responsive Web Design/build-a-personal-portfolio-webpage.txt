@@ -1,0 +1,363 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal Portfolio">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#welcome-section">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#sites">Sites I'm at</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <!-- Welcome Section -->
+        <header id="welcome-section">
+            <img src="https://tryhackme-images.s3.amazonaws.com/user-avatars/633c6a6a5e79d00042249276-1722105958210">
+            <h1>Welcome to My Portfolio</h1>
+            <p><br><i>PS C:\Users\SuperRatChef></i>Hi, I'm SuperRatChef, a passionate cybersecurity enthusiast with a curious mind and a love for problem-solving.<br></br><i>PS C:\Users\SuperRatChef></i>Whether it's experimenting with new technologies or diving deep into the world of cybersecurity, I'm always eager to learn and explore. <br></br><i>PS C:\Users\SuperRatChef></i>When I'm not dissecting the latest security trends, you’ll find me reading books on a wide range of topics, feeding my endless curiosity. Always in search of new knowledge. In my free time, I enjoy watching anime and spending time with my pets. <br></br><i>PS C:\Users\SuperRatChef></i>Welcome to my portfolio—let's connect and collaborate!</p>
+        </header>
+
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-tile">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="project-tile">
+                <a href="https://github.com/your-profile/project2" target="_blank">//Under construction//</a>
+            </div>
+        </section>
+
+        <section id="sites">
+            <h2>Sites I'm at</h2>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+            <div class="site-title">
+                <img src="https://avatars.githubusercontent.com/u/149808694?v=4">
+                <a href="https://github.com/your-profile/project1" target="_blank">Coming soon</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Section -->
+    <footer id="contact">
+        <p>Contact me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p><a id="profile-link" href="https://github.com/SuperRatChef" target="_blank">GitHub Profile</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //border: 1px solid red;
+}
+
+/* Styling for Navbar */
+nav#navbar {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+}
+
+nav#navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav#navbar ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav#navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav#navbar ul li a:hover {
+    color: #ddd;
+}
+
+/* Welcome Section */
+#welcome-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00c6ff77, #0072ff77);
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+#welcome-section h1 {
+    font-size: 3rem;
+    background-color: 
+}
+
+#welcome-section p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    background-color: 000000ff;
+    margin: 0 auto;
+    text-align: left;
+    padding: 20px;
+    border: 5px solid white;
+}
+#welcome-section p i{
+    color: yellow;
+    font-weight: 1000
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-tile {
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+.project-tile a {
+    text-decoration: none;
+    color: #0072ff;
+    font-size: 1.2rem;
+}
+/* sites section */
+
+#sites{
+    padding-top: 50px;
+    text-align: center;
+    background-color: #000000aa;
+    border-radius: 5%;
+    width: 80%;
+    margin: 100px auto;
+    padding: 50px;
+}
+#sites h2{
+    color: white;
+    font-size: 3rem;
+}
+.site-title{
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center; 
+
+}
+.site-title img{
+    width: 50px;
+    height: 50px;
+}
+.site-title a{
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+/* Contact Section */
+#contact {
+    padding: 30px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+#contact a {
+    color: #00c6ff;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: #0072ff;
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 600px) {
+    nav#navbar ul li {
+        margin: 5px 10px;
+    }
+
+    #welcome-section h1 {
+        font-size: 2.5rem;
+    }
+
+    #projects h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-tile {
+        width: 100%;
+    }
+}
+
+/* background art */
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+
+
+** end of undefined **
+

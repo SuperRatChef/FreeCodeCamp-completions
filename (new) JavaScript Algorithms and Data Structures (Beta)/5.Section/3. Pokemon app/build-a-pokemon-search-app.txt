@@ -1,0 +1,286 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Search App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Pokémon Search</h1>
+
+    <!-- Search Input and Button -->
+    <div class="search-area">
+      <input type="text" id="search-input" placeholder="Enter Pokémon name or ID" required>
+      <button id="search-button">Search</button>
+    </div>
+
+    <!-- Display Area for Pokémon Details -->
+    <div id="pokemon-details" class="pokemon-details">
+      <h2 id="pokemon-name"></h2>
+      <p id="types">Types: </p>
+      <div>ID: <p id="pokemon-id"></p></div>
+      <div>Weight: <p id="weight"></p></div>
+      <div>Height: <p id="height"></p></div>
+      <div id="stats">
+        <div>HP: <p id="hp"></p></div>
+        <div>Attack: <p id="attack"></p></div>
+        <div>Defense: <p id="defense"></p></div>
+        <div>Special Attack: <p id="special-attack"></p></div>
+        <div>Special Defense: <p id="special-defense"></p></div>
+        <div>Speed: <p id="speed"></p></div>
+      </div>
+      <!-- Pokémon sprite will be appended here -->
+      <div id="sprite-container"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #ff6347;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#search-input {
+  padding: 12px;
+  font-size: 1rem;
+  width: 70%;
+  border: 2px solid #ff6347;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #ff4500;
+  outline: none;
+}
+
+#search-button {
+  background-color: #ff6347;
+  color: #fff;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #ff4500;
+}
+
+/* Styling for Pokémon details */
+.pokemon-details {
+  display: none;
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-details{
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #444;
+  margin: 0 auto;
+}
+.pokemon-details p{
+  display: inline;
+}
+
+#types p {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #ff6347;
+  color: white;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#sprite-container img {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #search-input {
+    width: 60%;
+    font-size: 0.9rem;
+  }
+
+  #search-button {
+    font-size: 0.9rem;
+  }
+
+  .pokemon-details h2,
+  .pokemon-details p {
+    font-size: 1rem;
+  }
+}
+
+
+** end of undefined **
+
+** start of undefined **
+
+// Reference to elements
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const pokemonName = document.getElementById("pokemon-name");
+const pokemonId = document.getElementById("pokemon-id");
+const weightElement = document.getElementById("weight");
+const heightElement = document.getElementById("height");
+const typesElement = document.getElementById("types");
+const hpElement = document.getElementById("hp");
+const attackElement = document.getElementById("attack");
+const defenseElement = document.getElementById("defense");
+const specialAttackElement = document.getElementById("special-attack");
+const specialDefenseElement = document.getElementById("special-defense");
+const speedElement = document.getElementById("speed");
+const spriteContainer = document.getElementById("sprite-container");
+const pokemonDetails = document.getElementById("pokemon-details");
+
+// PokéAPI Proxy URL
+const apiURL = 'https://pokeapi.co/api/v2/pokemon/';
+
+// Fetch Pokémon Data
+async function fetchPokemonData(pokemon) {
+  try {
+    const response = await fetch(`${apiURL}${pokemon.toLowerCase()}`);
+    if (!response.ok) {
+      throw new Error('Pokémon not found');
+    }
+    const data = await response.json();
+    updatePokemonDetails(data);
+  } catch (error) {
+    alert('Pokémon not found');
+    clearPokemonDetails();
+  }
+}
+
+// Update the page with Pokémon data
+function updatePokemonDetails(data) {
+  // Show the details section
+  pokemonDetails.style.display = 'block';
+
+  // Name and ID
+  pokemonName.textContent = `${data.name.toUpperCase()}`;
+  pokemonId.textContent = `#${data.id}`;
+
+  // Weight and Height
+  weightElement.textContent = `${data.weight}`;
+  heightElement.textContent = `${data.height}`;
+
+  // Types
+  typesElement.textContent = '';
+  data.types.forEach((typeInfo) => {
+    const typeElement = document.createElement('p');
+    typeElement.textContent = typeInfo.type.name.toUpperCase();
+    typesElement.appendChild(typeElement);
+  });
+
+  // Stats
+  hpElement.textContent = `${data.stats[0].base_stat}`;
+  attackElement.textContent = `${data.stats[1].base_stat}`;
+  defenseElement.textContent = `${data.stats[2].base_stat}`;
+  specialAttackElement.textContent = `${data.stats[3].base_stat}`;
+  specialDefenseElement.textContent = `${data.stats[4].base_stat}`;
+  speedElement.textContent = `${data.stats[5].base_stat}`;
+
+  // Sprite Image
+  spriteContainer.innerHTML = ''; // Clear previous image
+  const sprite = document.createElement('img');
+  sprite.src = data.sprites.front_default;
+  sprite.alt = `${data.name} sprite`;
+  sprite.id = 'sprite';
+  spriteContainer.appendChild(sprite);
+}
+
+// Clear Pokémon details (for not found cases)
+function clearPokemonDetails() {
+  pokemonDetails.style.display = 'none';
+  spriteContainer.innerHTML = '';
+}
+
+// Add event listener to the search button
+searchButton.addEventListener('click', () => {
+  const query = searchInput.value.trim();
+  if (query) {
+    fetchPokemonData(query);
+  } else {
+    alert('Please enter a Pokémon name or ID');
+  }
+});
+
+
+** end of undefined **
+
